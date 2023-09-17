@@ -1,0 +1,6 @@
+torch
+torchvision
+requests
+numpy
+opencv-contrib-python
+pygame

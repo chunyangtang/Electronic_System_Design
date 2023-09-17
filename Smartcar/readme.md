@@ -35,3 +35,13 @@ Nuclei项目中需要的额外配置的引脚、配置文件与`HandwritingRecog
 其中PSoC中用到的UART相关函数对应的顶层设计为：
 ![UART顶层设计](./TopDesign.png)
 PSoC的时钟设置与`LEDBrightnessControl/readme.md`中的设置相同。
+
+- `mnist_pytorch/`：电脑端的手写数字识别程序
+    - `model_prediction.py`：在小车实际主程序中运行的手写数字识别函数，包含了网络权重加载、图像获取与处理、模型预测的功能。使用时需与`mnist_cnn.pt`放在同一文件夹下。
+    - `main.py`：用于训练的主程序，包含网络定义，会自动创建data文件夹并下载数据集数据，训练完成后会保存网络参数。程序末尾当前为做文件夹下15张图片的预测，可修改为窗口手写后的预测。
+    - `image_converter.py`：用于将图片转换为神经网络输入需要的28*28大小的工具函数，包含裁切、下采样、反色的功能，当前仅支持320*240的landscape图片。
+    - `image_handler.py`：同`HandwritingRecognition/readme.md`中的`image_handler.py`，用于开启PyGame绘图窗口。
+    - `mnist_cnn.pt`：训练好的神经网络权重。
+    - `requirements.txt`：Python依赖包。
+    - `camera_get_*.jpg`：处理前的图片示例。
+    - `camera_get*.jpg`：经`image_converter`处理后的图片示例。

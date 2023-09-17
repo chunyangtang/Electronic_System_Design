@@ -22,6 +22,8 @@
     - `oledfont.h`：屏幕显示的字体文件（即ASCII码等对应的“图片”），也加入和欢迎页面、播放声音页面等。
     - `oleddriver.h`：屏幕驱动函数，其中对输出字符串、显示函数等功能和用法有详细介绍，加入了增强版的函数`OLED_ShowString_Enhanced()`、`OLED_ShowString_Stepping()`。
 
+Nuclei项目中需要的额外配置的引脚、配置文件与`HandwritingRecognition/readme.md`中的一致。
+
 - `psoc_headers/`：打包为头文件后的PSoC上各功能模块。
     - `fpga_connect.h`：用于与FPGA板连接并控制OLED，提供`fpga_init()`函数用于建立UART连接，提供`fpga_SendString()`、`fpga_ClearScreen()`、`fpga_ShowWelcomePage()`函数，在OLED上打印字符串、图片等。
     - `XFS5152.h`：包含语音生成模块的`XFS_init()`初始化连接，`XFS_FrameInfo()`发送文本。

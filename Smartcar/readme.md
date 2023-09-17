@@ -32,3 +32,4 @@
 
 其中PSoC中用到的UART相关函数对应的顶层设计为：
 ![UART顶层设计](./TopDesign.png)
+PSoC的时钟设置与`LEDBrightnessControl/readme.md`中的设置相同。
